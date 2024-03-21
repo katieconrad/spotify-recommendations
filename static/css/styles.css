@@ -1,0 +1,13 @@
+h1 {
+    font-size: 5rem;
+}
+
+body {
+    font-size: 1.2rem;
+    margin: 3% 5%;
+    padding: 0% 3%;
+}
+
+.messages {
+    color: red;
+}
