@@ -1,0 +1,36 @@
+{% extends 'bootstrap/base.html' %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Spotify Recommendations{% endblock %}
+
+{% block styles %}
+<!--    CSS stylesheet-->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<h1>Spotify Recommender</h1>
+
+<!--Display Messages!-->
+<div class="messages">
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</div>
+
+<div class="intro">
+    <p>Welcome! This app will retrieve your Top 5 Artists from spotify and create a playlist of recommended tracks
+        based on those artists and an attribute of your choice.</p>
+</div>
+
+
+<div class="form">
+    {{ wtf.quick_form(form) }}
+</div>
+
+{% endblock %}
